@@ -125,10 +125,12 @@ output_file: The name of the output file (default: _Sidebar.md)
             sidebar_content.append(f"- {wiki_link}")
 
     # Write the sidebar content to the output file
-    with open(output_file, 'w', encoding="utf-8") as f:
+    # sidebar inside wiki folder
+    output_path = os.path.join(wiki_dir, output_file)
+    with open(output_path, 'w', encoding="utf-8") as f:
         f.write("\n".join(sidebar_content))
 
-    print(f"Sidebar generated at: {output_file}")
+    print(f"Sidebar generated at: {output_path}")
 
 def process_directory(directory_path, sidebar_content, level, gitignore_patterns):
     """
