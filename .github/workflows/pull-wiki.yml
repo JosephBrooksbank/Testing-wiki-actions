@@ -27,6 +27,9 @@ jobs:
       - name: Remove wiki git
         run: rm -rf wiki/.git
 
+      - name: Generate sidebar
+        run: python3 .github/scripts/generate_sidebar.py --wiki-dir wiki
+
       - name: git diff
         id: diff
         run: |
