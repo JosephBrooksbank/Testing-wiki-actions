@@ -80,3 +80,6 @@ jobs:
             --delete-branch \
             --squash \
             "${{ steps.create-pr.outputs.pull-request-number }}"
+
+      - name: Resync Wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
