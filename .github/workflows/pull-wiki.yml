@@ -58,10 +58,10 @@ jobs:
           add-paths: |
             wiki/**
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: sync wiki"
+          commit-message: "sync wiki"
           branch: bot/sync-wiki
           delete-branch: true
-          title: "chore: sync wiki"
+          title: "github action: sync wiki"
           body: |
             This PR syncs the wiki with the main repository.
 

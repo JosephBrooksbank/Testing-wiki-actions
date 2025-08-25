@@ -14,5 +14,9 @@ jobs:
   publish-wiki:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: Andrew-Chen-Wang/github-wiki-action@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Generate sidebar
+        run: python3 .github/scripts/generate_sidebar.py --wiki-dir wiki
+      - name: Publish wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
