@@ -27,7 +27,7 @@ def should_ignore(path, gitignore_patterns):
     for pattern in gitignore_patterns:
         # Handle directory-specific patterns
         if pattern.endswith('/') and os.path.isdir(path):
-            if path_str.endswith(pattern[:-1]) or f"{path_str}/" in pattern:
+            if os.path.basename(path_str) == pattern[:-1]:
                 return True
         # Handle wildcard patterns (simplified)
         elif '*' in pattern:
